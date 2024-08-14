@@ -4,12 +4,13 @@ function useCurrencyInfo(currency) {
     const [currencyInfo, setCurrencyInfo] = useState({});
 
     useEffect(() => {
-        fetch(`https://v6.exchangerate-api.com/v6/f3b6f69a28f5bd3bdf55d82f/latest/${currency}`)
+        fetch(`https://v6.exchangerate-api.com/v6/f3b6f69a28f5bd3bdf55d82f/latest/${currency}`)//exchange-rate api link
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 return response.json();
+                
             })
             .then(data => {
                 // Update the state with fetched data
